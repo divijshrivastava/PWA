@@ -5,3 +5,63 @@
 html, body{
     font-size:20px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #2196f3;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.content {
+    margin-bottom: 40px;
+}
+
+.install {
+    margin: 20px auto;
+}
+
+#installBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#installBtn:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
