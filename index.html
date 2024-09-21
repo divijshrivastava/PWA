@@ -45,5 +45,39 @@
         <p>© 2024 Your App Name. All rights reserved.</p>
     </footer>
    
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered!', reg))
+                    .catch(err => console.error('Service Worker registration failed!', err));
+            });
+        }
+
+        // Install prompt functionality
+        let installPromptEvent;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            installPromptEvent = e;
+            installBtn.style.display = 'block';
+
+            installBtn.addEventListener('click', () => {
+                installPromptEvent.prompt();
+                installPromptEvent.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    installPromptEvent = null;
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
